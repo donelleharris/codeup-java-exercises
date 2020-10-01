@@ -30,11 +30,11 @@ public class ControlFlowExercises {
         //1. c)
         for (int y = 100; y >= -10; y -= 5) {
             System.out.println(y);
-        };
+        }
 
         for(long z = 2; z < 1000000; z = z * z) {
             System.out.println(z);
-        };
+        }
         //2. Fizzbuzz
         // For Loop
         for (int x = 1; x <= 100; x++){
@@ -63,11 +63,11 @@ public class ControlFlowExercises {
         System.out.println("What number would you like to go up to?");
         int userNumber = sc.nextInt();
         System.out.println("Here is your table!");
-        Formatter f = new Formatter();
-        f.format("%-6s %1s %-7s %1s %-6s\n", "Number", "|", "Squared", "|", "Cubed");
-        f.format("%-6s %1s %-7s %1s %-6s\n", "------", "|", "-------", "|", "-----");
+        Formatter ft = new Formatter();
+        ft.format("%-6s %1s %-7s %1s %-6s\n", "Number", "|", "Squared", "|", "Cubed");
+        ft.format("%-6s %1s %-7s %1s %-6s\n", "------", "|", "-------", "|", "-----");
         for (int l = 1; l <= userNumber ; l++) {
-            f.format("%-6s %1s %-7s %1s %-6s\n", l, "|", (int)Math.pow(l, 2), "|", (int)Math.pow(l, 3));
+            ft.format("%-6s %1s %-7s %1s %-6s\n", l, "|", (int)Math.pow(l, 2), "|", (int)Math.pow(l, 3));
         }
         System.out.println(f);
         //4.
