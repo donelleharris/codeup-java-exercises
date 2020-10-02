@@ -10,7 +10,7 @@ public class Bob {
             String userResponse = "";
             do {
                 System.out.println("Start conversation here: ");
-                String conversation = sc.nextLine();
+                String conversation = sc.nextLine().trim();
                 if (conversation.endsWith("?")) {
                     System.out.println("Sure.");
                 } else if (conversation.endsWith("!")) {
