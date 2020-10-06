@@ -1,6 +1,7 @@
-package oopLecutre;
+package oopMiniLab;
+
 /*
-Create a class called Dish. This class will represent various restaurant dishes.
+Create a class called oopMiniLab.Dish. This class will represent various restaurant dishes.
 Include an integer property called “costInCents”
 Include a string property called “nameOfDish”
 Include a boolean property called “wouldRecommend”
@@ -17,6 +18,10 @@ public class Dish {
     public Boolean wouldRecommend;
 
     public void printSummary(){
-        System.out.printf("Cost: %d%nName: %s%nRecommended: %s", costInCents, nameOfDish, wouldRecommend);
+        System.out.printf("Cost: %d%nName: %s%nRecommended: %s%n",
+                costInCents,
+                nameOfDish,
+                wouldRecommend);
     }
+
 }
