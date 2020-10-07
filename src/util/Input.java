@@ -29,8 +29,7 @@ public class Input {
         int input = scanner.nextInt();
         if ( input < min || input > max ) {
             return getInt(min, max);
-        } else
-            System.out.println("Thank you!");
+        }
         return input;
     }
     public int getInt(){
