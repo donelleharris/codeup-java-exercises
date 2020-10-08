@@ -7,19 +7,19 @@ public class ArraysExercises {
         int[] numbers = {1, 2, 3, 4, 5};
         System.out.println(Arrays.toString(numbers));
 
-        Person[] persons = new Person[3];
-        persons[0] = new Person("Donelle");
-        persons[1] = new Person("Jocelyn");
-        persons[2] = new Person("Jace");
+        Person[] people = new Person[3];
+        people[0] = new Person("Donelle");
+        people[1] = new Person("Jocelyn");
+        people[2] = new Person("Jace");
 
-        for (Person person: persons){
+        for (Person person: people){
             person.sayHello();
             System.out.println("Hello, " + person.getName() + ", welcome.");
         }
 
-        persons = addPerson(persons, new Person("Madison"));
+        people = addPerson(people, new Person("Madison"));
 
-        for (Person person: persons){
+        for (Person person: people){
             System.out.println(person.getName());
         }
     }
