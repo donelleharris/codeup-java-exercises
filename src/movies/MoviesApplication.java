@@ -1,8 +1,6 @@
 package movies;
 import util.Input;
 
-import java.sql.SQLOutput;
-import java.util.Scanner;
 //Arrays Exercises
 //3. Movie List
 public class MoviesApplication {
@@ -13,7 +11,7 @@ public class MoviesApplication {
         int userChoice = new Input().getInt();
         displayUserSelection(userChoice);
     }
-
+    public static int userChoice;
     public static void DisplayUI(){
         System.out.println("What would you like to do?");
         System.out.println("0 - exit");
@@ -35,77 +33,54 @@ public class MoviesApplication {
             case 1:
                 System.out.println("Category: All");
                 DisplaySelectedMovies("all");
-                System.out.println();
-                //User Menu
-                DisplayUI();
-                //User choice
-                int userChoice = new Input().getInt();
-                displayUserSelection(userChoice);
                 break;
             case 2:
                 System.out.println("Category: Animated");
                 DisplaySelectedMovies("animated");
-                System.out.println();
-                //User Menu
-                DisplayUI();
-                //User choice
-                userChoice = new Input().getInt();
-                displayUserSelection(userChoice);
                 break;
             case 3:
                 // TODO = show drama
                 System.out.println("Category: Drama");
                 DisplaySelectedMovies("drama");
-                System.out.println();
-                //User Menu
-                DisplayUI();
-                //User choice
-                userChoice = new Input().getInt();
-                displayUserSelection(userChoice);
                 break;
             case 4:
                 // TODO = show horror
                 System.out.println("Category: Horror");
                 DisplaySelectedMovies("horror");
-                System.out.println();
-                //User Menu
-                DisplayUI();
-                //User choice
-                userChoice = new Input().getInt();
-                displayUserSelection(userChoice);
                 break;
             case 5:
                 // TODO = show scifi
                 System.out.println("Category: Sci-Fi");
                 DisplaySelectedMovies("scifi");
-                System.out.println();
-                //User Menu
-                DisplayUI();
-                //User choice
-                userChoice = new Input().getInt();
-                displayUserSelection(userChoice);
                 break;
-            case 6:
-
-                break;
+//            case 6:
+//                addMovie(???, addNewMovie());
+//                break;
 
         }
 
-        Input userInput = new Input();
-        if(option != 0 && userInput.yesNo()){
-            int userChoice = userInput.getInt();
-            displayUserSelection(userChoice);
-        }
+        goAgain();
 
     }
-//    public static void addMovie(String title, String category){
-//        System.out.println("Please enter movie title: ");
-//        Input input = new Input();
-//        title = input.getString();
-//        System.out.println("Please enter movie category: ");
-//        category = input.getString();
-//        setInfo(title, category);
-//    }
+
+    public static String[] addNewMovie(){
+        System.out.println("Enter movie title: ");
+        String newTitle = new Input().getString();
+        System.out.println("Enter movie category: ");
+        String category = new Input().getString();
+        return new String[]{newTitle, category};
+    }
+    public static Movie[] addMovie (Movie[]originalArray, Movie newMovie)
+    {
+        int currentSize = originalArray.length;
+        int newSize = currentSize + 1;
+        Movie[] tempArray = new Movie[newSize];
+        for (int i = 0; i < currentSize; i++) {
+            tempArray[i] = originalArray[i];
+        }
+        tempArray[newSize - 1] = newMovie;
+        return tempArray;
+    }
     public static void DisplaySelectedMovies(String selectedCategory){
         Movie[] moviesList = MoviesArray.findAll();
         if(selectedCategory.equals("all")){
@@ -118,6 +93,20 @@ public class MoviesApplication {
                     System.out.printf("title: %s | category: %s\n", movie.getName(), movie.getCategory());
                 }
             }
+        }
+    }
+
+    public static void goAgain(){
+
+        System.out.println("Would you like to make another selection? (y/N)");
+        boolean input = new Input().yesNo();
+        if(input) {
+            DisplayUI();
+            userChoice = new Input().getInt();
+            displayUserSelection(userChoice);
+        } else {
+            System.out.println("Goodbye! (AOL sound)");
+            System.exit(0);
         }
     }
 }

@@ -1,6 +1,6 @@
 package movies;
 import util.Input;
-
+import movies.MoviesArray;
 //Arrays Exercises
 //3. Movie List
 public class Movie {
@@ -13,9 +13,11 @@ public class Movie {
         this.category = _category;
     }
     //Setter(s)
-    public void setInfo(String title, String category){
-        this.name = title;
-        this.category = category;
+    public String title = this.name;
+    public String genre = this.category;
+
+    public static void setInfo(String title, String genre){
+        Movie movie = new Movie(title, genre);
     }
 
     //Getter(s)
