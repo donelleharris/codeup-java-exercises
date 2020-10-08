@@ -13,21 +13,22 @@ public class Input {
         return scanner;
     }
 
-    public String getSTring(){
-        System.out.println("Please enter your name: ");
+    public String getString(){
+//        System.out.println("Please enter your name: ");
         return this.scanner.nextLine();
     }
 
     public boolean yesNo(){
-        System.out.println("Yes or no? (y/N)");
+        System.out.println("Would you like to continue? [y/n]");
         String input = this.scanner.nextLine();
-        return (input.trim().equalsIgnoreCase("y") || input.trim().equalsIgnoreCase("yes"));
+        return input.trim().equalsIgnoreCase("y") || input.trim().equalsIgnoreCase("yes");
     }
 
     public int getInt(int min, int max){
-        System.out.printf("Please enter a number between %d & %d: ", min, max);
+        System.out.print("Enter your choice: ");
         int input = scanner.nextInt();
         if ( input < min || input > max ) {
+            System.out.printf("%d is not a valid entry. ", input);
             return getInt(min, max);
         }
         return input;
