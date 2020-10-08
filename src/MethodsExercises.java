@@ -1,5 +1,3 @@
-package com.tcc.java.programs;
-
 import java.util.*;
 
 

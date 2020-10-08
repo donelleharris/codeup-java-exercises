@@ -8,7 +8,7 @@ public class InputTest {
         if (input.yesNo()){
             System.out.println("this returns true");
         } else System.out.println("this returns false");
-        input.getSTring();
+        input.getString();
         input.yesNo();
         input.getInt();
         input.getInt(1, 10);
