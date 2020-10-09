@@ -1,5 +1,4 @@
 package shapes;
-import java.util.*;
 
 public class ShapeTest {
     public static void main(String[] args) {
