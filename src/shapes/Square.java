@@ -1,8 +1,7 @@
 package shapes;
-import java.util.*;
 
 public class Square extends Rectangle{
-    private int side;
+    protected int side;
 
     public Square(int side){
         super(side, side);
@@ -10,14 +9,10 @@ public class Square extends Rectangle{
     }
 
     public int getPerimeter() {
-        int perimeter = 4 * this.side;
-        System.out.println("perimeter of square = " + perimeter);
-        return perimeter;
+        return  4 * this.side;
     }
 
     public int getArea(){
-        int area = (int) Math.pow(this.side, 2);
-        System.out.println("area of square = " + area);
-        return area;
+        return (int) Math.pow(this.side, 2);
     }
 }
