@@ -1,5 +1,4 @@
 package shapes;
-import java.util.*;
 
 public class Rectangle extends Quadrilateral implements Measurable{
 

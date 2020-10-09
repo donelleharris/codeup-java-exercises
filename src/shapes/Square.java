@@ -1,5 +1,4 @@
 package shapes;
-import java.util.*;
 
 public class Square extends Quadrilateral{
     public Square(double side) {

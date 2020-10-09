@@ -1,6 +1,4 @@
 package shapes;
-import java.lang.ref.ReferenceQueue;
-import java.util.*;
 
 public class ShapeTest {
     public static void main(String[] args) {
