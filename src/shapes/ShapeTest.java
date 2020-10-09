@@ -1,17 +1,16 @@
 package shapes;
+import java.lang.ref.ReferenceQueue;
 import java.util.*;
 
 public class ShapeTest {
     public static void main(String[] args) {
-        Rectangle box1 = new Rectangle(5, 4);
-        Rectangle box2 = new Square(5);
+        Measurable myShape;
+        myShape = new Rectangle(7, 7);
+        System.out.println(myShape.getPerimeter());
+        System.out.println(myShape.getArea());
 
-        System.out.println("Box 1");
-        box1.getPerimeter();
-        box1.getArea();
-
-        System.out.println("Box 2");
-        box2.getPerimeter();
-        box2.getArea();
+        myShape= new Square(8);
+        System.out.println(myShape.getPerimeter());
+        System.out.println(myShape.getArea());
     }
 }

@@ -1,23 +1,34 @@
 package shapes;
 import java.util.*;
 
-public class Square extends Rectangle{
-    private int side;
-
-    public Square(int side){
-        super(side, side);
-        this.side = side;
+public class Square extends Quadrilateral{
+    public Square(double side) {
+        this.length = side;
+        this.width = side;
     }
 
-    public int getPerimeter() {
-        int perimeter = 4 * this.side;
-        System.out.println("perimeter of square = " + perimeter);
-        return perimeter;
+    public void setSide(double side) {
+        this.length = side;
+        this.width = side;
     }
 
-    public int getArea(){
-        int area = (int) Math.pow(this.side, 2);
-        System.out.println("area of square = " + area);
-        return area;
+    @Override
+    public void setLength(double length) {
+        this.setSide(length);
+    }
+
+    @Override
+    public void setWidth(double width) {
+        this.setSide(length);
+    }
+
+    @Override
+    public double getPerimeter() {
+        return 4 * length;
+    }
+
+    @Override
+    public double getArea() {
+        return length * length;
     }
 }

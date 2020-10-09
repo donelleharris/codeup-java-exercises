@@ -1,27 +1,29 @@
 package shapes;
 import java.util.*;
 
-public class Rectangle {
-    private int length;
-    private int width;
+public class Rectangle extends Quadrilateral implements Measurable{
 
-    //getter
-    public Rectangle(int side1, int side2){
-        this.width = side2;
-        this.length = side1;
+    public Rectangle(double length, double width) {
+        super(length, width);
     }
-    public int side1 = this.length;
 
-    public int side2 = this.width;
-
-    public int getPerimeter(){
-        int perimeter = 2 * length + 2 * width;
-        System.out.println("perimeter of rectangle = " + perimeter);
-        return perimeter;
+    @Override
+    public double getPerimeter() {
+        return length * 2 + width * 2;
     }
-    public int getArea (){
-        int area = length * width;
-        System.out.println("area of rectangle = " + area);
-        return area;
+
+    @Override
+    public double getArea() {
+        return length * width;
+    }
+
+    @Override
+    public void setLength(double length) {
+        this.length = length;
+    }
+
+    @Override
+    public void setWidth(double width) {
+        this.width = width;
     }
 }
