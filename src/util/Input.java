@@ -49,6 +49,10 @@ public class Input {
         int input = scanner.nextInt();
         return input;
     }
+    public int getInt(String prompt){
+        int input = scanner.nextInt();
+        return input;
+    }
 
     public double getDouble(double min, double max){
         System.out.printf("Please enter a mixed number between %f & %f: (i.e. 4.3)", min, max);

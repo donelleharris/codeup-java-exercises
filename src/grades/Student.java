@@ -6,11 +6,6 @@ public class Student {
     private String name;
     private ArrayList<Integer> grades;
 
-    public Student(){
-        this.name = "no name";
-        this.grades = new ArrayList<>();
-    }
-
     public Student(String name){
         this.name = name;
         this.grades = new ArrayList<>();
