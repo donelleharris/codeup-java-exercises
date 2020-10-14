@@ -14,12 +14,23 @@ public class Input {
     }
 
     public String getString(){
-//        System.out.println("Please enter your name: ");
+        System.out.println("Please enter your name: ");
+        return this.scanner.nextLine();
+    }
+
+    public String getString(String prompt){
+        System.out.println(prompt);
         return this.scanner.nextLine();
     }
 
     public boolean yesNo(){
         System.out.println("Would you like to continue? [y/n]");
+        String input = this.scanner.nextLine();
+        return input.trim().equalsIgnoreCase("y") || input.trim().equalsIgnoreCase("yes");
+    }
+
+    public boolean yesNo(String prompt){
+        System.out.println(prompt);
         String input = this.scanner.nextLine();
         return input.trim().equalsIgnoreCase("y") || input.trim().equalsIgnoreCase("yes");
     }
