@@ -35,38 +35,104 @@ public class Input {
         return input.trim().equalsIgnoreCase("y") || input.trim().equalsIgnoreCase("yes");
     }
 
-    public int getInt(int min, int max){
-        System.out.print("Enter your choice: ");
-        int input = scanner.nextInt();
-        if ( input < min || input > max ) {
-            System.out.printf("%d is not a valid entry. ", input);
-            return getInt(min, max);
+    public int getInt(){
+        System.out.print("Please enter an integer: ");
+        String userInput;
+        int input;
+        try {
+            userInput = scanner.nextLine();
+            input = Integer.valueOf(userInput);
+        } catch (Exception e) {
+            System.out.println("That is not a valid entry. ");
+            input = getInt();
         }
         return input;
     }
-    public int getInt(){
-        System.out.print("Please enter a number: ");
-        int input = scanner.nextInt();
+
+    public int getInt(int min, int max){
+        System.out.printf("Please enter an integer between %d & %d: (i.e. 4.3)", min, max);
+        String userInput;
+        int input;
+        try {
+            userInput = scanner.nextLine();
+            input = Integer.valueOf(userInput);
+            if (input >= max || input <= min) {
+                System.out.println("That is not a valid entry. ");
+                input = getInt(min, max);
+            } else return input;
+        } catch (Exception e) {
+            System.out.println("That is not a valid entry. ");
+            input = getInt(min, max);
+        }
         return input;
     }
+
     public int getInt(String prompt){
-        int input = scanner.nextInt();
+        System.out.println(prompt);
+        String userInput;
+        int input;
+        try {
+            userInput = scanner.nextLine();
+            input = Integer.valueOf(userInput);
+        } catch (Exception e) {
+            System.out.println("That is not a valid entry. ");
+            if (prompt == null)
+                prompt = "Enter an integer: ";
+            input = getInt(prompt);
+        }
+        return input;
+    }
+
+    public double getDouble(){
+        System.out.println("Please enter a mixed number: ");
+        String userInput;
+        double input;
+        try {
+            userInput = scanner.nextLine();
+            input = Double.valueOf(userInput);
+        } catch (Exception e) {
+            System.out.println("That is not a valid entry. ");
+
+            input = getDouble();
+        }
         return input;
     }
 
     public double getDouble(double min, double max){
         System.out.printf("Please enter a mixed number between %f & %f: (i.e. 4.3)", min, max);
-        double input = scanner.nextDouble();
-        if (input < min || input > max) {
-            return getDouble(min, max);
-        } else
-            System.out.println("Thank you!");
-        return input;
-    }
-    public double getDouble(){
-        System.out.print("Please enter a mixed number: (i.e. 4.3)");
-        double input = scanner.nextDouble();
+        String userInput;
+        double input;
+        try {
+            userInput = scanner.nextLine();
+            input = Double.valueOf(userInput);
+            if (input >= max || input <= min) {
+                System.out.println("That is not a valid entry. ");
+                input = getDouble(min, max);
+            } else return input;
+        } catch (Exception e) {
+            System.out.println("That is not a valid entry. ");
+            input = getDouble(min, max);
+        }
         return input;
     }
 
+    public double getDouble(double min, double max, String prompt) {
+        System.out.println(prompt);
+        String userInput;
+        double input;
+        try {
+            userInput = scanner.nextLine();
+            input = Double.valueOf(userInput);
+            if (input >= max || input <= min) {
+                System.out.println("That is not a valid entry. ");
+                input = getDouble(min, max);
+            } else return input;
+        } catch (Exception e) {
+            System.out.println("That is not a valid entry. ");
+            if (prompt == null)
+                prompt = String.format("Enter a real number between %f and %f: ", min, max);
+            input = getDouble(min, max, prompt);
+        }
+        return input;
+    }
 }
